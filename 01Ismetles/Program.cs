@@ -6,7 +6,12 @@ namespace _01Ismetles
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Random vel = new Random();
+            string[] lehetoseg = new string[] { "kő", "papír", "olló" };
+            int gepvalasz = vel.Next(0, 3);
+            Console.WriteLine("Gép választása: {0}", lehetoseg[gepvalasz]);
+
+            Console.ReadKey();
         }
     }
 }

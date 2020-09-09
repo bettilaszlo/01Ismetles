@@ -17,6 +17,25 @@ namespace _01Ismetles
             jatekosvalasz = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalasz]);
 
+            if (jatekosvalasz == gepvalasz) //Döntetlen
+            {
+                Console.WriteLine("Döntetlen!");
+            }
+            else if (
+                (jatekosvalasz == 0 && gepvalasz == 1)
+                ||
+                (jatekosvalasz == 1 && gepvalasz == 2)
+                ||
+                (jatekosvalasz == 2 && gepvalasz == 1)
+                    ) //Gép nyer
+            {
+                Console.WriteLine("Sajnos a gép nyert!");
+            }
+            else //Játékos nyer
+            {
+                Console.WriteLine("Játékos nyert!");
+            }
+
             Console.ReadKey();
         }
     }

@@ -4,8 +4,10 @@ namespace _01Ismetles
 {
     class Program
     {
+        static string[] lehetoseg = new string[] { "kő", "papír", "olló" };
         static void eredmenykiiras( int gep, int ember)
         {
+            Console.WriteLine("Gép: {0} ---Játékos: {1}", lehetoseg[gep], lehetoseg[ember]);
             switch (Embernyer(gep, ember))
             {
                 case 0:
@@ -46,7 +48,7 @@ namespace _01Ismetles
         static void Main(string[] args)
         {
             Random vel = new Random();
-            string[] lehetoseg = new string[] { "kő", "papír", "olló" };
+           
             int gepvalasz = vel.Next(0, 3);
             // Console.WriteLine("Gép választása: {0}", lehetoseg[gepvalasz]);
 
@@ -56,10 +58,10 @@ namespace _01Ismetles
             jatekosvalasz = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalasz]);
 
-            Console.WriteLine("Gép: {0} ---Játékos: {1}", lehetoseg[gepvalasz], lehetoseg[jatekosvalasz]);
+            
 
             eredmenykiiras(gepvalasz, jatekosvalasz);
-            
+
             Console.ReadKey();
         }
     }

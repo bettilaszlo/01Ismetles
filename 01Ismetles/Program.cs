@@ -5,6 +5,17 @@ namespace _01Ismetles
     class Program
     {
         static string[] lehetoseg = new string[] { "kő", "papír", "olló" };
+        static int Jatekosvalasztas()
+        {
+            Console.WriteLine("kő (0), papír (1), olló (2)");
+            Console.Write("Válassz: ");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+        static int Gepvalasztas()
+        {
+            Random vel = new Random();
+            return vel.Next(0, 3);
+        }
         static void eredmenykiiras( int gep, int ember)
         {
             Console.WriteLine("Gép: {0} ---Játékos: {1}", lehetoseg[gep], lehetoseg[ember]);
@@ -47,18 +58,13 @@ namespace _01Ismetles
         }
         static void Main(string[] args)
         {
-            Random vel = new Random();
-           
-            int gepvalasz = vel.Next(0, 3);
+            
             // Console.WriteLine("Gép választása: {0}", lehetoseg[gepvalasz]);
 
-            int jatekosvalasz;
-            Console.WriteLine("kő (0), papír (1), olló (2)");
-            Console.Write("Válassz: ");
-            jatekosvalasz = Convert.ToInt32(Console.ReadLine());
+            int jatekosvalasz = Jatekosvalasztas();
             Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalasz]);
 
-            
+            int gepvalasz = Gepvalasztas();
 
             eredmenykiiras(gepvalasz, jatekosvalasz);
 

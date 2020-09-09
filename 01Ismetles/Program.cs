@@ -4,6 +4,23 @@ namespace _01Ismetles
 {
     class Program
     {
+        static void eredmenykiiras( int gep, int ember)
+        {
+            switch (Embernyer(gep, ember))
+            {
+                case 0:
+                    Console.WriteLine("Döntetlen");
+                    break;
+
+                case 1:
+                    Console.WriteLine("Gép nyert");
+                    break;
+
+                case 2:
+                    Console.WriteLine("Játékos nyert");
+                    break;
+            }
+        }
         static int Embernyer(int gep, int ember)
         {
 
@@ -41,20 +58,8 @@ namespace _01Ismetles
 
             Console.WriteLine("Gép: {0} ---Játékos: {1}", lehetoseg[gepvalasz], lehetoseg[jatekosvalasz]);
 
-            switch (Embernyer(gepvalasz, jatekosvalasz))
-            {
-                case 0:
-                    Console.WriteLine("Döntetlen");
-                    break;
-
-                case 1:
-                    Console.WriteLine("Gép nyert");
-                    break;
-
-                case 2:
-                    Console.WriteLine("Játékos nyert");
-                    break;
-            }
+            eredmenykiiras(gepvalasz, jatekosvalasz);
+            
             Console.ReadKey();
         }
     }

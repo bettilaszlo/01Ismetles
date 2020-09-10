@@ -18,7 +18,7 @@ namespace _01Ismetles
         }
         static void eredmenykiiras( int gep, int ember)
         {
-            Console.WriteLine("Gép: {0} ---Játékos: {1}", lehetoseg[gep], lehetoseg[ember]);
+            Console.WriteLine("Gép: {0} ----- Játékos: {1}", lehetoseg[gep], lehetoseg[ember]);
             switch (Embernyer(gep, ember))
             {
                 case 0:
@@ -56,19 +56,46 @@ namespace _01Ismetles
                 return 2;
             }
         }
+        private static bool akarjatszani()
+        {
+            //throw new NotImplementedException();
+
+            Console.WriteLine("------------------------------------------------------------------------");
+            Console.Write("Tovább? [i/n]: ");
+            string valasz = Console.ReadLine().ToLower();
+            Console.WriteLine("\n------------------------------------------------------------------------");
+
+            if (valasz == "i")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         static void Main(string[] args)
         {
-            
+
             // Console.WriteLine("Gép választása: {0}", lehetoseg[gepvalasz]);
+            bool tovabb = true;
+            while (tovabb)
+            {
+                int jatekosvalasz = Jatekosvalasztas();
+                int gepvalasz = Gepvalasztas();
+                eredmenykiiras(gepvalasz, jatekosvalasz);
 
-            int jatekosvalasz = Jatekosvalasztas();
-            Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalasz]);
+                tovabb = akarjatszani();
 
-            int gepvalasz = Gepvalasztas();
+                Console.WriteLine("");
+            }
+           
 
-            eredmenykiiras(gepvalasz, jatekosvalasz);
+            //Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalasz]);
 
             Console.ReadKey();
         }
+
+        
     }
 }

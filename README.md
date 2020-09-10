@@ -14,3 +14,8 @@
     - 1: Gép nyer
     - 2: Ember nyer
 - [x] Kiírjuk az eredményt
+## Metódusok
+majd képek
+## Játékmenet 2.0
+- [] Addig játszunk amíg ki nem lépünk a játékból.
+- 

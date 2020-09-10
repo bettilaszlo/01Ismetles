@@ -16,8 +16,15 @@
 - [x] Kiírjuk az eredményt
 ## Metódusok
 majd képek
+
 ## Játékmenet 2.0
 - [x] Addig játszunk amíg ki nem lépünk a játékból.
  
-- [] Statisztika megvalósítás
+- [x] Statisztika megvalósítás
 - gép, játékos, mennyi menet
+- [] Eredmények fájlba írása és megjelenítése.
+
+ - 1. érték -> Menet
+ - 2. érték -> Játékos
+ - 3. érték -> Gép
+ - 4. értkek ;-vel elválasztva 

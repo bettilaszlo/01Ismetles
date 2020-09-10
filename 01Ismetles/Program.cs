@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 
 namespace _01Ismetles
 {
@@ -83,7 +85,30 @@ namespace _01Ismetles
         }
         private static void Statisztikakiiras()
         {
-            Console.WriteLine("\t Menetek száma: {0}, Játékos győzelmének száma: {1}, Gép győzelmének száma: {2}", menet, gepNyer,jatekosNyer);
+            Console.WriteLine("\t Menetek száma: {0}, Játékos győzelmének száma: {1}, Gép győzelmének száma: {2}", menet, jatekosNyer, gepNyer);
+        }
+        private static void Statisztikafajlbol()
+        {
+            StreamReader stat = new StreamReader("statisztika.txt");
+            while (!stat.EndOfStream)
+            {
+                string[] szovegadat = stat.ReadLine().Split(';');
+                int[] adat = new int[3];
+                Console.WriteLine(szovegadat);
+            
+            
+            for (int i = 0; i < adat.Length; i++)
+            {
+                adat[i] = int.Parse(szovegadat[i]);
+            }
+                Console.WriteLine("{0} {1} {2}", adat[0], adat[1], adat[2]);
+            }
+            stat.Close();
+            Console.WriteLine("----------------->Statisztika vége<-----------------");
+        }
+        private static void Statisztikafajlba()
+        {
+            StreamWriter ir = new StreamWriter("statisztika.txt");
         }
         static void Main(string[] args)
         {
@@ -102,7 +127,9 @@ namespace _01Ismetles
 
                 Console.WriteLine("");
             }
+            Statisztikafajlbol();
             Statisztikakiiras();
+            Statisztikafajlba();
 
             //Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalasz]);
 

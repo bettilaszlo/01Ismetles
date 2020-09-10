@@ -5,6 +5,11 @@ namespace _01Ismetles
     class Program
     {
         static string[] lehetoseg = new string[] { "kő", "papír", "olló" };
+
+        static int gepNyer = 0;
+        static int jatekosNyer = 0;
+        static int menet = 0;
+
         static int Jatekosvalasztas()
         {
             Console.WriteLine("kő (0), papír (1), olló (2)");
@@ -37,9 +42,9 @@ namespace _01Ismetles
         static int Embernyer(int gep, int ember)
         {
 
-            if (ember == gep) //Döntetlen
+            if (ember == gep) 
             {
-                return 0;
+                return 0; //Döntetlen
             }
             else if (
                 (ember == 0 && gep == 1)
@@ -47,13 +52,15 @@ namespace _01Ismetles
                 (ember == 1 && gep == 2)
                 ||
                 (ember == 2 && gep == 0)
-                    ) //Gép nyer
+                    ) 
             {
-                return 1;
+                gepNyer++;
+                return 1; //Gép nyer
             }
-            else //Játékos nyer
+            else 
             {
-                return 2;
+                jatekosNyer++;
+                return 2; //Játékos nyer
             }
         }
         private static bool akarjatszani()
@@ -74,6 +81,10 @@ namespace _01Ismetles
                 return false;
             }
         }
+        private static void Statisztikakiiras()
+        {
+            Console.WriteLine("\t Menetek száma: {0}, Játékos győzelmének száma: {1}, Gép győzelmének száma: {2}", menet, gepNyer,jatekosNyer);
+        }
         static void Main(string[] args)
         {
 
@@ -81,6 +92,8 @@ namespace _01Ismetles
             bool tovabb = true;
             while (tovabb)
             {
+                menet++;
+
                 int jatekosvalasz = Jatekosvalasztas();
                 int gepvalasz = Gepvalasztas();
                 eredmenykiiras(gepvalasz, jatekosvalasz);
@@ -89,7 +102,7 @@ namespace _01Ismetles
 
                 Console.WriteLine("");
             }
-           
+            Statisztikakiiras();
 
             //Console.WriteLine("Játékos választása: {0}", lehetoseg[jatekosvalasz]);
 
